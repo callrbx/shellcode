@@ -53,5 +53,5 @@ char reverse_tcp[] = \
 
 int main(int argc, char **argv){
   int (*test)() = (int(*)())reverse_tcp;
-	test();
+  test();
 }
