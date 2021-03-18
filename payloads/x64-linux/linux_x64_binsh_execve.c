@@ -2,7 +2,7 @@
 
 /* 
 
-x64 execve /bin/sh -- 26 Bytes -- 7MAY017 -- icon
+x64 execve /bin/sh -- 28 Bytes -- 7MAY017 -- icon
 
 0:  31 c0                   xor    eax,eax
 2:  48 89 c2                mov    rdx,rax
