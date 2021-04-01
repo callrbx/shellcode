@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <unistd.h>
+#include <sys/mman.h>
 
 /* 
 
@@ -22,6 +24,9 @@ char execve_sh[] = \
 
 
 int main(int argc, char **argv){
+
+mprotect((void*)((intptr_t)execve_sh & ~0xFFF), 8192, PROT_READ|PROT_EXEC);  
+
   int (*test)() = (int(*)())execve_sh;
   test();
 }
