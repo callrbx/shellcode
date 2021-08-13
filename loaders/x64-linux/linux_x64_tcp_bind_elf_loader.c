@@ -182,7 +182,6 @@ get ASCII value of FD by adding 0x30 (0x01 + 0x30 = 0x31 ('1'))
 143:    48 31 d2                xor    rdx,rdx
 146:    52                      push   rdx
 147:    48 89 e2                mov    rdx,rsp
-14a:    48 b9 ef be ad de de    movabs rcx,0xbadc0dedeadbeef
 151:    c0 ad 0b
 154:    51                      push   rcx
 155:    49 89 e0                mov    r8,rsp
